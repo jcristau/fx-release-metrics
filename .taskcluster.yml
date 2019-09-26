@@ -1,0 +1,25 @@
+version: 0
+tasks:
+  - provisionerId: '{{ taskcluster.docker.provisionerId }}'
+    workerType: '{{ taskcluster.docker.workerType }}'
+    extra:
+      github:
+        events: []
+    payload:
+      maxRunTime: 3600
+      image: python
+      command:
+        - /bin/bash
+        - '--login'
+        - '-c'
+        - >-
+          git clone {{event.head.repo.url}} repo && cd repo && git config
+          advice.detachedHead false && git checkout {{event.head.sha}} && pip
+          install requests && python3 ./script.py
+    metadata:
+      name: 'gather release metrics'
+      description: ''
+      owner: '{{ event.head.user.email }}'
+      source: '{{ event.head.repo.url }}'
+allowPullRequests: collaborators
+
