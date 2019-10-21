@@ -130,8 +130,12 @@ def main():
         results = []
     else:
         r = requests.get(os.environ['PREVIOUS_RESULTS'])
-        r.raise_for_status()
-        results = r.json()
+        try:
+            r.raise_for_status()
+        except Exception:
+            results = []
+        else:
+            results = r.json()
     setup()
     backouts = nightly_backouts(nightly)
     beta_bugs = beta_regressions(beta)
