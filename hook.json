@@ -2,14 +2,14 @@
     "provisionerId": "aws-provisioner-v1",
     "workerType": "github-worker",
     "payload": {
-        "image": "python",
+        "image": "debian:10",
         "features": {
             "taskclusterProxy": true
         },
         "command": [
             "/bin/bash",
             "-c",
-            "apt-get update && apt-get -y install python3-requests && git clone https://github.com/jcristau/fx-release-metrics/ && cd fx-release-metrics && python run-taskcluster.py"
+            "apt-get update && apt-get -y install git mercurial python3-requests && git clone https://github.com/jcristau/fx-release-metrics/ && cd fx-release-metrics && python3 run-taskcluster.py"
         ],
         "maxRunTime": 600,
         "artifacts": {
