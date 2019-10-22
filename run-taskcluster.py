@@ -153,32 +153,33 @@ def main():
             'release': release,
             'beta_regressions': [
                 len(beta_bugs),
-                'https://bugzilla.mozilla.org/buglist.cgi?id={}'.format(
+                'https://bugzilla.mozilla.org/buglist.cgi?bug_id={}'.format(
                     ','.join(str(b) for b in beta_bugs))],
             'nightly_regressions': [
                 len(nightly_bugs),
-                'https://bugzilla.mozilla.org/buglist.cgi?id={}'.format(
+                'https://bugzilla.mozilla.org/buglist.cgi?bug_id={}'.format(
                     ','.join(str(b) for b in nightly_bugs))],
             'unfixed_beta_regressions': [
                 len(unfixed_beta),
-                'https://bugzilla.mozilla.org/buglist.cgi?id={}'.format(
+                'https://bugzilla.mozilla.org/buglist.cgi?bug_id={}'.format(
                     ','.join(str(b) for b in unfixed_beta))],
             'unfixed_beta_regressions_notp5': [
                 len(unfixed_beta_notp5),
-                'https://bugzilla.mozilla.org/buglist.cgi?id={}'.format(
+                'https://bugzilla.mozilla.org/buglist.cgi?bug_id={}'.format(
                     ','.join(str(b) for b in unfixed_beta_notp5))],
             'unfixed_nightly_regressions': [
                 len(unfixed_nightly),
-                'https://bugzilla.mozilla.org/buglist.cgi?id={}'.format(
+                'https://bugzilla.mozilla.org/buglist.cgi?bug-id={}'.format(
                     ','.join(str(b) for b in unfixed_nightly))],
             'unfixed_nightly_regressions_notp5': [
                 len(unfixed_nightly_notp5),
-                'https://bugzilla.mozilla.org/buglist.cgi?id={}'.format(
+                'https://bugzilla.mozilla.org/buglist.cgi?bug_id={}'.format(
                     ','.join(str(b) for b in unfixed_nightly_notp5))],
             'beta_uplifts': [len(uplifts), list(uplifts)],
         })
     with open('/results.json', 'w') as f:
         json.dump(results, f)
+    json.dump(results, sys.stdout)
 
 if __name__ == '__main__':
     main()
