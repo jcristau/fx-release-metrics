@@ -9,7 +9,7 @@
         "command": [
             "/bin/bash",
             "-c",
-            "apt-get update && apt-get install python3-requests && git clone https://github.com/jcristau/fx-release-metrics/ && cd fx-release-metrics && python run-taskcluster.py"
+            "apt-get update && apt-get -y install python3-requests && git clone https://github.com/jcristau/fx-release-metrics/ && cd fx-release-metrics && python run-taskcluster.py"
         ],
         "maxRunTime": 600,
         "artifacts": {
