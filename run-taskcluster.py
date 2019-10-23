@@ -169,7 +169,7 @@ def main():
                     ','.join(str(b) for b in unfixed_beta_notp5))],
             'unfixed_nightly_regressions': [
                 len(unfixed_nightly),
-                'https://bugzilla.mozilla.org/buglist.cgi?bug-id={}'.format(
+                'https://bugzilla.mozilla.org/buglist.cgi?bug_id={}'.format(
                     ','.join(str(b) for b in unfixed_nightly))],
             'unfixed_nightly_regressions_notp5': [
                 len(unfixed_nightly_notp5),
