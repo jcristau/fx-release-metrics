@@ -57,8 +57,8 @@ mozext = /srv/work/version-control-tools/hgext/mozext
 pushlog = /srv/work/version-control-tools/hgext/pushlog
 firefoxtree = /srv/work/version-control-tools/hgext/firefoxtree
 ''')
-    subprocess.check_call(['hg', 'clone', 'https://hg.mozilla.org/mozilla-unified'])
-    subprocess.check_call(['hg', 'clone', 'https://hg.mozilla.org/mozilla-central'])
+    subprocess.check_call(['hg', 'clone', '--noupdate', 'https://hg.mozilla.org/mozilla-unified'])
+    subprocess.check_call(['hg', 'clone', '--noupdate', 'https://hg.mozilla.org/mozilla-central'])
 
 mc = 'mozilla-central'
 mu = 'mozilla-unified'
