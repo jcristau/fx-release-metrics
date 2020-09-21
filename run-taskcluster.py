@@ -97,7 +97,7 @@ unfixed_regressions_template = (
     "keywords=regression&chfield=%5BBug%20creation%5D&chfieldfrom={NIGHTLY_START}&chfieldto={BETA_END}&"
     "resolution=---&resolution=FIXED&"
     "o1=anyexact&f1=cf_status_firefox{OLDRELEASE}&v1=disabled%2Cunaffected%2C---&"
-    "o2=anyexact&f2=cf_status_firefox{RELEASE}&v2=fixed%2Cverified%2Cwontfix")
+    "o2=anyexact&f2=cf_status_firefox{RELEASE}&v2=affected%2Cfix-optional%2Cwontfix")
 unfixed_regressions_notp5_template = unfixed_regressions_template + (
     "&f3=priority&o3=notequals&v3=P5")
 
