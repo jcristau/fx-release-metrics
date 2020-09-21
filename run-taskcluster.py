@@ -186,6 +186,7 @@ def main():
                 'https://bugzilla.mozilla.org/buglist.cgi?bug_id={}'.format(
                     ','.join(str(b) for b in unfixed_nightly_notp5))],
             'beta_uplifts': [len(uplifts), list(uplifts)],
+            'nightly_backouts': [len(backouts), list(backouts)],
         })
     with open('/results.json', 'w') as f:
         json.dump(results, f)
