@@ -71,7 +71,7 @@ def nightly_backouts(v):
     backout_changesets = subprocess.check_output(['hg', 'log',
             '-r', 'FIREFOX_NIGHTLY_%d_END::(present(FIREFOX_NIGHTLY_%d_END) or tip) and pushhead()' % (v-1, v),
             '--template', "{if(backsoutnodes, ifeq(node, pushbasenode, '{node|short} {desc|firstline}\n', ''))}"],
-            cwd='mozilla-central').splitlines()
+            cwd='mozilla-central', encoding='utf-8').splitlines()
     return backout_changesets
 
 # features
