@@ -50,7 +50,7 @@ DATES = {
 }
 
 for version in DATES:
-    if DATES[version] > datetime.date.today().strftime('%Y-%m-%d'):
+    if DATES[version] >= datetime.date.today().strftime('%Y-%m-%d'):
         nightly = version - 1
         beta = version - 2
         release = version - 3
